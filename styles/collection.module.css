@@ -1,0 +1,211 @@
+.collectionTab {
+    position: absolute;
+    width: 75vw;
+    height: 86vh;
+    left: 0px;
+    top: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.collectionTabBlur {
+    position: absolute;
+    width: 75vw;
+    height: 86vh;
+    left: 0px;
+    top: 0px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 86px rgba(0, 0, 0, 0.25), inset 0px 4px 111px rgba(0, 0, 0, 0.25);
+    filter: blur(12.5px);
+}
+
+.title {
+position: absolute;
+top: 3.90vh;
+color: #F7F5EB;
+}
+
+.main {
+    position: absolute;
+    top: 10.74vh;
+    height: 65.53vh;
+    width: 53.48vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    background: rgba(247, 245, 235, 0.5);
+    box-shadow: 0px 4px 103px rgba(0, 0, 0, 0.25), inset 0px 4px 109px rgba(0, 0, 0, 0.25);
+    overflow: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+  }
+
+.blur {
+    position: absolute;
+    top: 10.74vh;
+    height: 65.53vh;
+    width: 53.48vw;
+    
+    background: rgba(247, 245, 235, 0.5);
+    box-shadow: 0px 4px 103px rgba(0, 0, 0, 0.25), inset 0px 4px 109px rgba(0, 0, 0, 0.25);
+    overflow: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+        
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 86px rgba(0, 0, 0, 0.25), inset 0px 4px 111px rgba(0, 0, 0, 0.25);
+    filter: blur(12.5px);
+}
+
+.blur::-webkit-scrollbar {
+    display: none;
+}
+
+.TokensListTwo {
+    position: absolute;
+    top: 0px;
+    margin-top: 2.34vh;
+    
+    overflow: scroll;
+    width: 100%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.TokensListTwo::-webkit-scrollbar {
+    display: none;
+  }
+
+.TokensListSingle {
+    position: absolute;
+    top: 0px;
+    margin-top: 8.2vh;
+    
+    width: 100%;
+    overflow: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.TokensListSingle::-webkit-scrollbar {
+    display: none;
+  }
+
+.tabs {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.tab {
+    width: 50%;
+    margin: 0px;
+}
+
+.selectedTab {
+    width: 50%;
+    margin: 0px;
+}
+
+.unSelectedTabRight {
+    width: 50%;
+    margin: 0px;
+
+    background: #97866A;
+    border-radius: 0px 0px 0px 20px;
+}
+
+.unSelectedTabLeft {
+    width: 50%;
+    margin: 0px;
+
+    background: #97866A;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.migrate {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0.4vh 0.7vw;
+
+position: absolute;
+top: 77.83vh;
+
+background: #97866A;
+box-shadow: 0px 4px 90px #000000;
+}
+
+.migrateText {
+    color: #04020D;
+}
+
+.singleTitle {
+    text-align: center;
+    position: absolute;
+    top: 1.56vh;
+    color: #F7F5EB;
+}
+
+.dialogBoxButtons {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simpleBox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.dialogTitle {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.singleButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    width: 100%;
+}

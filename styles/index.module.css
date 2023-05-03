@@ -1,0 +1,106 @@
+.box {
+    position: absolute;
+    width: 75vw;
+    height: 86vh;
+    left: 0px;
+    top: 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+color: #04020D;
+}
+
+.migrate {
+    position: absolute;
+    margin-top: 45vh;
+    
+    color: #DBD9D0;
+}
+
+.connectButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4vh 0.7vw;
+
+    position: absolute;
+    margin-top: 62vh;
+
+    background: #97866A;
+    box-shadow: 0px 4px 90px #000000;
+}
+
+.connectText {
+color: #04020D;
+}
+
+.blur {
+position: absolute;
+width: 75vw;
+height: 86vh;
+left: 0px;
+top: 0px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+background: rgba(0, 0, 0, 0.1);
+box-shadow: 0px 4px 86px rgba(0, 0, 0, 0.25), inset 0px 4px 111px rgba(0, 0, 0, 0.25);
+filter: blur(12.5px);
+}
+
+.dialogBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.dialogBoxButtons {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dialogTitle {
+    margin-left: 20px;
+    text-align: center;
+}
+
+.tryAgain {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.sendButtons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 24px;
+    width: 100%;
+}
