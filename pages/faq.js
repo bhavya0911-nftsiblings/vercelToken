@@ -1,6 +1,6 @@
 import FAQ from '../styles/faq.module.css'
 
-export default function faq() {
+export default function Faq() {
 
     return(
             <div class={FAQ.container}>

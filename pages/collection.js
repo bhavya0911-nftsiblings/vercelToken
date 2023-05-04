@@ -1,14 +1,14 @@
 import { useEffect, useState, useContext } from 'react'
 import Head from 'next/head'
-import CollectionList from './components/_CollectionList'
-import { CollectionContext } from './components/_DataContext'
+import CollectionList from '../components/_CollectionList'
+import { CollectionContext } from '../components/_DataContext'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import Collection from '../styles/collection.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWallet, faCircleExclamation} from '@fortawesome/free-solid-svg-icons'
 
-export default function collectionTab() {
+export default function CollectionTab() {
   
   const { oldCollection, newCollection, setVerified, fetch } = useContext(CollectionContext)
   const [blur, setBlur] = useState(false)
@@ -131,7 +131,7 @@ export default function collectionTab() {
           const dialogBox = (
             <div className={Collection.dialogBoxButtons}>
               <div className={Collection.simpleBox}>
-                <p className={Collection.dialogTitle}>You don't have any Y4si tokens</p>
+                <p className={Collection.dialogTitle}>You don`&apos;`t have any Y4si tokens</p>
                 <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "54px",}} />
               </div>
               <div className={Collection.singleButton}>

@@ -1,15 +1,15 @@
-import CollectionList from './components/_CollectionList'
+import CollectionList from '../components/_CollectionList'
 import Head from 'next/head'
 import { useAccount, usePrepareContractWrite, useContractWrite } from 'wagmi'
 import { useEffect, useState, useContext } from 'react'
-import { CollectionContext } from './components/_DataContext'
+import { CollectionContext } from '../components/_DataContext'
 import { useRouter } from 'next/router'
 import { getContract, getProvider  } from '@wagmi/core'
-import Migrate from '../styles/migrate.module.css'
+import migrate from '../styles/migrate.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWallet, faTriangleExclamation, faSpinner, faArrowUpRight, faCircleExclamation, faCheck } from '@fortawesome/free-solid-svg-icons'
 
-export default function migrate() {
+export default function Migrate() {
 
   const [tryAgain, setTryAgain] = useState(false)
   const [zero, setZero] = useState(false)
@@ -112,11 +112,11 @@ export default function migrate() {
     onSettled(data, error) {
       async function waitForConfirmation() {
         let DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <div className={Migrate.dialogTitle}>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <div className={migrate.dialogTitle}>
                 <p>Awaiting Transaction Confirmation</p>
-                <div className={Migrate.awaitTrx}>
+                <div className={migrate.awaitTrx}>
                   <p><a href={`https://goerli.etherscan.io/tx/${data.hash}`} style={{"color": "#4429F2",}} target="_blank" rel="noopener noreferrer" >Etherscan Link</a></p>
                   <FontAwesomeIcon icon={faTriangleExclamation} style={{"height": "27px",}} />
                 </div>
@@ -129,11 +129,11 @@ export default function migrate() {
         setDialogBox(DialogBox)
         await data.wait()
         DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <div className={Migrate.dialogTitle}>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <div className={migrate.dialogTitle}>
                 <p>Transaction Confirmed</p>
-                <div className={Migrate.awaitTrx}>
+                <div className={migrate.awaitTrx}>
                   <p><a href={`https://goerli.etherscan.io/tx/${data.hash}`} style={{"color": "#4429F2",}} target="_blank" rel="noopener noreferrer">Etherscan Link</a></p>
                   <FontAwesomeIcon icon={faTriangleExclamation} style={{"height": "27px",}} />
                 </div>
@@ -176,12 +176,12 @@ export default function migrate() {
       }
       if(error) {
         const DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <p className={Migrate.dialogTitle}>Cancelled by User</p>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <p className={migrate.dialogTitle}>Cancelled by User</p>
               <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "27px",}} />
             </div>
-            <div className={Migrate.singleButton}>
+            <div className={migrate.singleButton}>
               <button onClick={() => setContractWrite(true)}><l>Send</l></button>
             </div>
           </div>
@@ -293,12 +293,12 @@ export default function migrate() {
     }   
     if(erc1155Number.length !== 0  && erc721Number.length !== 0) {
       const DialogBox = (
-        <div className={Migrate.dialogBoxButtons}>
-          <div className={Migrate.simpleBox}>
-            <p className={Migrate.dialogTitle}>2 transactions required for ERC1155 and ERC721 tokens</p>
+        <div className={migrate.dialogBoxButtons}>
+          <div className={migrate.simpleBox}>
+            <p className={migrate.dialogTitle}>2 transactions required for ERC1155 and ERC721 tokens</p>
             <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "54px",}} />
           </div>
-          <div className={Migrate.singleButton}>
+          <div className={migrate.singleButton}>
             <button onClick={() => setWrap([[funcERC1155, ERC1155Args], [funcERC721, ERC721Args]])}><l>Continue</l></button>
           </div>
         </div>
@@ -375,12 +375,12 @@ export default function migrate() {
         }
         wrapERC1155()
         const DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <p className={Migrate.dialogTitle}>Migrate all ERC1155 tokens</p>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <p className={migrate.dialogTitle}>migrate all ERC1155 tokens</p>
               <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "27px",}} />
             </div>
-            <div className={Migrate.singleButton}>
+            <div className={migrate.singleButton}>
               <button onClick={() => setContractWrite(true)}><l>Continue</l></button>
             </div>
           </div>
@@ -398,12 +398,12 @@ export default function migrate() {
         }
         wrapERC721()
         const DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <p className={Migrate.dialogTitle}>Migrate all ERC721 tokens</p>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <p className={migrate.dialogTitle}>migrate all ERC721 tokens</p>
               <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "27px",}} />
             </div>
-            <div className={Migrate.singleButton}>
+            <div className={migrate.singleButton}>
               <button onClick={() => setContractWrite(true)}><l>Continue</l></button>
             </div>
           </div>
@@ -419,8 +419,8 @@ export default function migrate() {
       if(typeof write === 'function') {
         write()
         const DialogBox = (
-          <div className={Migrate.dialogBox}>
-            <p className={Migrate.dialogTitle}>Waiting for user confirmation</p>
+          <div className={migrate.dialogBox}>
+            <p className={migrate.dialogTitle}>Waiting for user confirmation</p>
             <FontAwesomeIcon icon={faSpinner} spin style={{"--fa-primary-color": "#000000", "--fa-secondary-color": "#000000", "height": "27px",}} />
           </div>
         )
@@ -444,12 +444,12 @@ export default function migrate() {
       }
       else {
         const DialogBox = (
-          <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <p className={Migrate.dialogTitle}>You need to approve {toApprove.length} contracts to migrate your tokens</p>
+          <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <p className={migrate.dialogTitle}>You need to approve {toApprove.length} contracts to migrate your tokens</p>
               <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "54px",}} />
             </div>
-            <div className={Migrate.singleButton}>
+            <div className={migrate.singleButton}>
             <button onClick={() => updateApprove()}>Approve</button>
             </div>
           </div>
@@ -464,8 +464,8 @@ export default function migrate() {
     if(isLoading) {
       if(isLoading === true) {
         const DialogBox = (
-          <div className={Migrate.dialogBox}>
-            <p className={Migrate.dialogTitle}>Waiting for user confirmation</p>
+          <div className={migrate.dialogBox}>
+            <p className={migrate.dialogTitle}>Waiting for user confirmation</p>
             <FontAwesomeIcon icon={faSpinner} spin style={{"--fa-primary-color": "#000000", "--fa-secondary-color": "#000000", "height": "27px",}} />
           </div>
         )
@@ -481,12 +481,12 @@ export default function migrate() {
       if(Object.keys(oldCollection).length === 0 ) {
         if(Object.keys(newCollection).length !== 0) {
           const DialogBox = (
-            <div className={Migrate.dialogBoxButtons}>
-              <div className={Migrate.simpleBox}>
-                <p className={Migrate.dialogTitle}>No tokens to migrate, view collection</p>
+            <div className={migrate.dialogBoxButtons}>
+              <div className={migrate.simpleBox}>
+                <p className={migrate.dialogTitle}>No tokens to migrate, view collection</p>
                 <FontAwesomeIcon icon={faTriangleExclamation} style={{"height": "27px",}} />
               </div>
-              <div className={Migrate.singleButton}>
+              <div className={migrate.singleButton}>
                 <button onClick={() => router.push('/collection')}>Continue</button>
               </div>
             </div>
@@ -496,12 +496,12 @@ export default function migrate() {
         }
         else {
           const DialogBox = (
-            <div className={Migrate.dialogBoxButtons}>
-            <div className={Migrate.simpleBox}>
-              <p className={Migrate.dialogTitle}>You don't have any Y4si tokens</p>
+            <div className={migrate.dialogBoxButtons}>
+            <div className={migrate.simpleBox}>
+              <p className={migrate.dialogTitle}>You don`&apos;`t have any Y4si tokens</p>
               <FontAwesomeIcon icon={faCircleExclamation} style={{"height": "54px",}} />
             </div>
-            <div className={Migrate.singleButton}>
+            <div className={migrate.singleButton}>
               <button><l><a href="https://rarible.com/vvoyage/items" target="_blank" rel="noopener noreferrer">Purchase</a></l></button>
             </div>
           </div>
@@ -513,12 +513,12 @@ export default function migrate() {
     }
     else if(!isConnected) {
       const DialogBox = (
-        <div className={Migrate.dialogBoxButtons}>
-          <div className={Migrate.simpleBox}>
-            <p className={Migrate.dialogTitle}>No Wallet Connected</p>
+        <div className={migrate.dialogBoxButtons}>
+          <div className={migrate.simpleBox}>
+            <p className={migrate.dialogTitle}>No Wallet Connected</p>
             <FontAwesomeIcon icon={faWallet} style={{"height": "27px",}} />
           </div>
-          <div className={Migrate.singleButton}>
+          <div className={migrate.singleButton}>
             <button onClick={() => router.push('/')}><l>Connect Wallet</l></button>
           </div>
         </div>
@@ -572,16 +572,16 @@ export default function migrate() {
         <meta name="description" content="Created by Siblings Lab" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className={blur ? Migrate.blur : Migrate.main}>
-        <h3 className={Migrate.title}>Eligible Tokens</h3>
-        <div className={Migrate.TokensList}>
-          <CollectionList collection={oldCollection} update={updateTokens} type='Migrate' />
+      <div className={blur ? migrate.blur : migrate.main}>
+        <h3 className={migrate.title}>Eligible Tokens</h3>
+        <div className={migrate.TokensList}>
+          <CollectionList collection={oldCollection} update={updateTokens} type='migrate' />
         </div>
-        <button className={zero ? Migrate.proceedZero : Migrate.proceed} onClick={() => proceed()}><h5 className={zero ? Migrate.proceedZeroText : Migrate.proceedText}>PROCEED</h5></button>
+        <button className={zero ? migrate.proceedZero : migrate.proceed} onClick={() => proceed()}><h5 className={zero ? migrate.proceedZeroText : migrate.proceedText}>PROCEED</h5></button>
         {zero && 
-        <span className={Migrate.zero}>
+        <span className={migrate.zero}>
           <FontAwesomeIcon icon={faTriangleExclamation} style={{color: "#ffffff", height: '15px'}} />
-          <l className={Migrate.zeroText}>Select a Token</l>
+          <l className={migrate.zeroText}>Select a Token</l>
         </span>}
       </div>
       {dialogBox}
