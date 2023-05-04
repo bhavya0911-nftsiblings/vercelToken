@@ -241,11 +241,11 @@ export default function Migrate() {
       }
     }
     else {
-      migrate()
+      migrateTokens()
     }
   }
 
-  const migrate = () => {
+  const migrateTokens = () => {
     const ERC1155Args = []
     const ERC721Args = []
     let funcERC721 = ''
@@ -440,7 +440,7 @@ export default function Migrate() {
   useEffect(() => {
     if(toApprove) {
       if(toApprove.length === 0) {
-        migrate()
+        migrateTokens()
       }
       else {
         const DialogBox = (
