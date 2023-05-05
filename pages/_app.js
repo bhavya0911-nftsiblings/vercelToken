@@ -12,9 +12,7 @@ import { publicProvider } from 'wagmi/providers/public'
 import { CreateCollection } from '../components/_DataContext'
 import { useRouter } from 'next/router'
 import { Roboto_Mono } from 'next/font/google'
-import Migrate from '../styles/migrate.module.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useContext } from 'react'
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -41,7 +39,7 @@ const wagmiClient = createClient({
 export default function App({ Component, pageProps }) {
 
   const pageName = Component.name
-
+  console.log(pageName)
   const visible = pageName === 'index' || pageName === 'faq' ? false : true;
 
   const router = useRouter()
@@ -68,19 +66,19 @@ export default function App({ Component, pageProps }) {
                 <ul>
                   <li onClick={() => (router.push('/'))}>
                     <h5>Home</h5>
-                    {pageName === 'index' && <span className='current'></span>}
+                    {pageName === 'Index' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/migrate'))}>
                     <h5>Migrate</h5>
-                    {pageName === 'migrate' && <span className='current'></span>}
+                    {pageName === 'Migrate' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/collection'))}>
                     <h5>Collection</h5>
-                    {pageName === 'collectionTab' && <span className='current'></span>}
+                    {pageName === 'CollectionTab' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/faq'))}>
                     <h5>FAQ</h5>
-                    {pageName === 'faq' && <span className='current'></span>}
+                    {pageName === 'Faq' && <span className='current'></span>}
                   </li>
                 </ul>
               </nav>

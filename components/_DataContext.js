@@ -66,8 +66,7 @@ function CreateCollection({ children }) {
     const [oldCollection, setOldCollection] = useState()
     const [newCollection, setNewCollection] = useState()
     const [collectionAddress, setCollectionAddress] = useState()
-    const [connectedAddress, setConnectAddress] = useState(null)
-    const { address, isConnected } = useAccount()
+    const {address, isConnected } = useAccount()
     const [verified, setVerified] = useState(false)
     const [visitable, setVisitable] = useState(false)
 

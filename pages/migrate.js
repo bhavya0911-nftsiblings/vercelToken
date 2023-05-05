@@ -428,8 +428,10 @@ export default function Migrate() {
         setDialogBox(DialogBox)
         setContractWrite(false)
       }
-      setContractWrite(false)
-      setTryAgain(true)
+      else {
+        setContractWrite(false)
+        setTryAgain(true)
+      }
     }
   }, [contractWrite])
 
@@ -575,7 +577,7 @@ export default function Migrate() {
       <div className={blur ? migrate.blur : migrate.main}>
         <h3 className={migrate.title}>Eligible Tokens</h3>
         <div className={migrate.TokensList}>
-          <CollectionList collection={oldCollection} update={updateTokens} type='migrate' />
+          <CollectionList collection={oldCollection} update={updateTokens} type='Migrate' />
         </div>
         <button className={zero ? migrate.proceedZero : migrate.proceed} onClick={() => proceed()}><h5 className={zero ? migrate.proceedZeroText : migrate.proceedText}>PROCEED</h5></button>
         {zero && 
