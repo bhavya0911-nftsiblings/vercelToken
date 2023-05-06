@@ -39,8 +39,8 @@ const wagmiClient = createClient({
 export default function App({ Component, pageProps }) {
 
   const pageName = Component.name
-  console.log(pageName)
-  const visible = pageName === 'index' || pageName === 'faq' ? false : true;
+
+  const visible = (pageName === 'Index' || pageName === 'Faq') ? false : true;
 
   const router = useRouter()
   const { isConnected } = useAccount()
