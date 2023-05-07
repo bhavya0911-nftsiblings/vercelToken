@@ -40,7 +40,10 @@ export default function App({ Component, pageProps }) {
 
   const pageName = Component.name
 
-  const visible = (pageName === 'Index' || pageName === 'Faq') ? false : true;
+  console.log(pageName)
+  console.log(Component)
+  
+  const visible = (pageName === 'j' || pageName === 'r') ? false : true;
 
   const router = useRouter()
   const { isConnected } = useAccount()
@@ -66,19 +69,19 @@ export default function App({ Component, pageProps }) {
                 <ul>
                   <li onClick={() => (router.push('/'))}>
                     <h5>Home</h5>
-                    {pageName === 'Index' && <span className='current'></span>}
+                    {pageName === 'j' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/migrate'))}>
                     <h5>Migrate</h5>
-                    {pageName === 'Migrate' && <span className='current'></span>}
+                    {pageName === 'm' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/collection'))}>
                     <h5>Collection</h5>
-                    {pageName === 'CollectionTab' && <span className='current'></span>}
+                    {pageName === 'm' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/faq'))}>
                     <h5>FAQ</h5>
-                    {pageName === 'Faq' && <span className='current'></span>}
+                    {pageName === 'r' && <span className='current'></span>}
                   </li>
                 </ul>
               </nav>
