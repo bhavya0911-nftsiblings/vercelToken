@@ -30,26 +30,26 @@ const CollectionContext = createContext()
 
 function CreateCollection({ children }) {
 
-    const ERC1155WrapperAddress = '0xF1C1948DF4a06b4E5328a4b7a568d961140e8C9E'
-    const ERC721WrapperAddress = '0xd5AAb9d836A8D08CfDca64129E8463312FB9eB6E'
+    const ERC1155WrapperAddress = '0x766e3a0A1AE5fe4CAAFf6e75112aAdeC5C16e62D'
+    const ERC721WrapperAddress = '0x54278a00966EE8F6EC0670C4d01D70A45B6201aF'
 
     const voyage = {
-        address: '0xE741783eC82c9176AcddFf31bb93426c6359EF8E',
+        address: '0x0799C00d237E1295Ef28b1e2BdFCc3005d05b367',
         abi: ERC1155,
     }
     
     const loveIsInTheAir = {
-        address: '0x235AA667C550Ad34E31E1dAb567052a32ECD45b7',
+        address: '0x181CECfa1544E6C2a7f4Dd82BbB40840e7eD57D5',
         abi: LoveIsInTheAir,
     }
     
     const lar = {
-        address: '0x5882cC817FDA45D56eeDed3B2dadFb7ee679f83C',
+        address: '0xb2553C14b39A524f1c47524f7582225f15BA8014',
         abi: ERC721,
     }
     
     const keys = {
-        address: '0x6D75685dCe70bf19Cc61245D490CE032C4d28425',
+        address: '0x593168A5Cf20D73754BfdA2cE2898302E254CacE',
         abi: ERC1155,
     }
 
