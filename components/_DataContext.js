@@ -129,6 +129,11 @@ function CreateCollection({ children }) {
             args: [7]
         },
         {
+          ...lar,
+          functionName: 'ownerOf',
+          args: [8]
+        },
+        {
             ...voyage,
             functionName: 'isApprovedForAll',
             args: [address, ERC1155WrapperAddress]
@@ -193,6 +198,11 @@ function CreateCollection({ children }) {
             functionName: 'ownerOf',
             args: [1000007]
         },
+        {
+            ...ERC721Wrapper,
+            functionName: 'ownerOf',
+            args: [1000008]
+        },
       ],
       watch: true,
     })
@@ -234,6 +244,7 @@ function CreateCollection({ children }) {
       let tokenIds = []
       let tokenURIs = []
       const initData = data[0]
+      console.log("calVoyage " + initData)
       initData.map((value, index) => {
         if(value !== 0){
           for(let i = 0; i < value; i++) {
@@ -249,6 +260,7 @@ function CreateCollection({ children }) {
       let tokenIds = []
       let tokenURIs = []
       const initData = data[1]
+      console.log("calLoveIs " +initData)
       initData.map((value, index) => {
         if(value !== 0) {
           for(let i = 0; i < value; i++) {
@@ -264,6 +276,7 @@ function CreateCollection({ children }) {
       let tokenIds = []
       let tokenURIs = []
       const initData = data[2]
+      console.log("callar " + initData)
       if(initData !== 0 ) {
         for(let i = 4; i < 11; i++) {
           if(data[i] === address) {
@@ -279,6 +292,7 @@ function CreateCollection({ children }) {
       let tokenIds = []
       let tokenURIs = []
       const initData = data[3]
+      console.log("calKeys " + initData)
       initData.map((value, index) => {
         if(value !== 0) {
           for(let i = 0; i < value; i++) {
@@ -293,7 +307,8 @@ function CreateCollection({ children }) {
     const newCalVoyage = () => {
       let tokenIds = []
       let tokenURIs = []
-      const initData = data[15]
+      const initData = data[16]
+      console.log("calNewVoyage " + initData)
       let voyageTokens = []
       for(let i = 0; i < 6; i++) {
         voyageTokens.push(initData[i])
@@ -312,7 +327,8 @@ function CreateCollection({ children }) {
     const newCalLoveIsInTheAir = () => {
       let tokenIds = []
       let tokenURIs = []
-      const initData = data[15]
+      const initData = data[16]
+      console.log("calnewLoveIs " + initData)
       let loveIsInTheAirTokens = []
       for(let i = 8; i < 13; i++) {
         loveIsInTheAirTokens.push(initData[i])
@@ -331,12 +347,13 @@ function CreateCollection({ children }) {
     const newCalLar = () => {
       let tokenIds = []
       let tokenURIs = []
-      const initData = data[16]
+      const initData = data[17]
+      console.log("calNewlar " + initData)
       if(initData !== 0) {
-        for(let i = 17; i < 24; i++) {
+        for(let i = 18; i < 26; i++) {
           if(data[i] === address) {
-            tokenURIs.push(larURI[i - 17])
-            tokenIds.push(parseInt(i - 16))
+            tokenURIs.push(larURI[i - 18])
+            tokenIds.push(parseInt(i - 17))
           }
         }
       }
@@ -346,7 +363,8 @@ function CreateCollection({ children }) {
     const newCalKeys = () => {
       let tokenIds = []
       let tokenURIs = []
-      const initData = data[15]
+      const initData = data[16]
+      console.log("calNewKeys " + initData)
       let keysTokens = []
       for(let i = 6; i < 8; i++) {
         keysTokens.push(initData[i])
@@ -373,7 +391,7 @@ function CreateCollection({ children }) {
           title: 'Voyage',
           tokenIds: voyageIds,
           tokenURIs: voyageURIs,
-          approved: data[11],
+          approved: data[12],
         })
       }
       if(loveIsInTheAirIds.length !== 0) {
@@ -381,7 +399,7 @@ function CreateCollection({ children }) {
           title: 'Love Is In The Air',
           tokenIds: loveIsInTheAirIds,
           tokenURIs: loveIsInTheAirURIs,
-          approved: data[12],
+          approved: data[13],
         })
       }
       if(larIds.length !== 0) {
@@ -389,7 +407,7 @@ function CreateCollection({ children }) {
           title: 'Lines and Ripples',
           tokenIds: larIds,
           tokenURIs: larURIs,
-          approved: data[13],
+          approved: data[14],
         })
       }
       if(keysIds.length !== 0) {
@@ -397,7 +415,7 @@ function CreateCollection({ children }) {
           title: 'Key',
           tokenIds: keysIds,
           tokenURIs: keyURIs,
-          approved: data[14],
+          approved: data[15],
         })
       }
       return oldCollection

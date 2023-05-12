@@ -116,11 +116,14 @@ export default function Index() {
     }
     else {
       setVerified(false)
+      setBlur(false)
+      setText('Connect Wallet')
     }
   }, [isConnected, address])
 
   useEffect(() => {
     if(!verified) {
+      setBlur(false)
       setText('Connect Wallet')
     }
   }, [verified])

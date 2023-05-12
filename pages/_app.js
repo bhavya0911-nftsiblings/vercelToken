@@ -13,8 +13,8 @@ import { CreateCollection } from '../components/_DataContext'
 import { useRouter } from 'next/router'
 import { Roboto_Mono } from 'next/font/google'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const roboto_mono = Roboto_Mono({ subsets: ['latin'] })
 
@@ -38,14 +38,12 @@ const wagmiClient = createClient({
 
 export default function App({ Component, pageProps }) {
 
-  const pageName = Component.name
-
-  console.log(pageName)
-  console.log(Component)
-  
-  const visible = (pageName === 'j' || pageName === 'r') ? false : true;
-
   const router = useRouter()
+
+  const pageName = router.pathname
+  
+  const visible = (pageName === '/' || pageName === '/faq') ? false : true;
+
   const { isConnected } = useAccount()
 
   return (
@@ -69,19 +67,19 @@ export default function App({ Component, pageProps }) {
                 <ul>
                   <li onClick={() => (router.push('/'))}>
                     <h5>Home</h5>
-                    {pageName === 'j' && <span className='current'></span>}
+                    {pageName === '/' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/migrate'))}>
                     <h5>Migrate</h5>
-                    {pageName === 'm' && <span className='current'></span>}
+                    {pageName === '/migrate' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/collection'))}>
                     <h5>Collection</h5>
-                    {pageName === 'm' && <span className='current'></span>}
+                    {pageName === '/collection' && <span className='current'></span>}
                   </li>
                   <li onClick={() => (router.push('/faq'))}>
                     <h5>FAQ</h5>
-                    {pageName === 'r' && <span className='current'></span>}
+                    {pageName === '/faq' && <span className='current'></span>}
                   </li>
                 </ul>
               </nav>

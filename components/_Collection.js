@@ -84,7 +84,7 @@ function Token(props) {
   return (
     <li className={CollectionList.tokenCard}  onClick={() => handleClick(tokenId)} >
         <div className={CollectionList.token}>
-          <Image src={tokenURI} className={CollectionList.tokenImg} fill={true} alt={tokenId} />
+          <Image src={tokenURI} className={CollectionList.tokenImg} fill={true} alt={tokenId} priority={true} />
             {localState && <span className={CollectionList.holder}>
               <FontAwesomeIcon icon={faCheck} style={{"--fa-primary-color": "#04020d", "--fa-secondary-color": "#04020d", "color": "#04020d", "height": "24px",}} />
             </span>}

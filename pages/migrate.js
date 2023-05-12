@@ -71,6 +71,7 @@ export default function Migrate() {
   const proceed = () => {
     const [required, collectionArray] = checkForZero()
     let toApproveList = []
+    console.log(collectionArray)
     if(!required) {
       for(let i = 0; i < collectionArray.length; i++) {
         const collectionId = collectionArray[i]
@@ -192,13 +193,66 @@ export default function Migrate() {
     },
   })
   
+  // const updateApprove = () => {
+  //   if(toApprove.length > 0) {
+  //     const collectionId = toApprove[0]
+  //     if(collectionId === 0) {
+  //       async function approveVoyage() {
+  //         const gas = await voyage.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+  //         setGasLimit(parseInt(gas * 1.25))
+  //         setAbi(collectionAddress['voyage'])
+  //         setFunctionName('setApprovalForAll')
+  //         setArgs([ERC1155Wrapper.address, true])
+  //         setContractWrite(true)
+  //       }
+  //       approveVoyage()
+  //     }
+  //     else if(collectionId === 1) {
+  //       async function approveLoveIsInTheAir() {
+  //         const gas = await loveIsInTheAir.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+  //         setGasLimit(parseInt(gas * 1.25))
+  //         setAbi(collectionAddress['loveIsInTheAir'])
+  //         setFunctionName('setApprovalForAll')
+  //         setArgs([ERC1155Wrapper.address, true])
+  //         setContractWrite(true)
+  //       }
+  //       approveLoveIsInTheAir()
+  //     }
+  //     else if(collectionId === 2) {
+  //       async function approveLar() {
+  //         const gas = await lar.estimateGas.setApprovalForAll(ERC721Wrapper.address, true)
+  //         setGasLimit(parseInt(gas * 1.25))
+  //         setAbi(collectionAddress['lar'])
+  //         setFunctionName('setApprovalForAll')
+  //         setArgs([ERC721Wrapper.address, true])
+  //         setContractWrite(true)
+  //       }
+  //       approveLar()
+  //     }
+  //     else if(collectionId === 3) {
+  //       async function approveKeys() {
+  //         const gas = await keys.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+  //         setGasLimit(parseInt(gas * 1.25))
+  //         setAbi(collectionAddress['keys'])
+  //         setFunctionName('setApprovalForAll')
+  //         setArgs([ERC1155Wrapper.address, true])
+  //         setContractWrite(true)
+  //       }
+  //       approveKeys()
+  //     }
+  //   }
+  //   else {
+  //     migrateTokens()
+  //   }
+  // }
+
   const updateApprove = () => {
     if(toApprove.length > 0) {
       const collectionId = toApprove[0]
       if(collectionId === 0) {
-        async function approveVoyage() {
-          const gas = await voyage.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
-          setGasLimit(parseInt(gas * 1.25))
+        function approveVoyage() {
+          // const gas = await voyage.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+          setGasLimit(parseInt(100000 * 1.25))
           setAbi(collectionAddress['voyage'])
           setFunctionName('setApprovalForAll')
           setArgs([ERC1155Wrapper.address, true])
@@ -207,9 +261,9 @@ export default function Migrate() {
         approveVoyage()
       }
       else if(collectionId === 1) {
-        async function approveLoveIsInTheAir() {
-          const gas = await loveIsInTheAir.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
-          setGasLimit(parseInt(gas * 1.25))
+        function approveLoveIsInTheAir() {
+          // const gas = await loveIsInTheAir.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+          setGasLimit(parseInt(100000 * 1.25))
           setAbi(collectionAddress['loveIsInTheAir'])
           setFunctionName('setApprovalForAll')
           setArgs([ERC1155Wrapper.address, true])
@@ -218,9 +272,9 @@ export default function Migrate() {
         approveLoveIsInTheAir()
       }
       else if(collectionId === 2) {
-        async function approveLar() {
-          const gas = await lar.estimateGas.setApprovalForAll(ERC721Wrapper.address, true)
-          setGasLimit(parseInt(gas * 1.25))
+        function approveLar() {
+          // const gas = await lar.estimateGas.setApprovalForAll(ERC721Wrapper.address, true)
+          setGasLimit(parseInt(100000 * 1.25))
           setAbi(collectionAddress['lar'])
           setFunctionName('setApprovalForAll')
           setArgs([ERC721Wrapper.address, true])
@@ -229,9 +283,9 @@ export default function Migrate() {
         approveLar()
       }
       else if(collectionId === 3) {
-        async function approveKeys() {
-          const gas = await keys.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
-          setGasLimit(parseInt(gas * 1.25))
+        function approveKeys() {
+          // const gas = await keys.estimateGas.setApprovalForAll(ERC1155Wrapper.address, true)
+          setGasLimit(parseInt(100000 * 1.25))
           setAbi(collectionAddress['keys'])
           setFunctionName('setApprovalForAll')
           setArgs([ERC1155Wrapper.address, true])
@@ -417,6 +471,7 @@ export default function Migrate() {
   useEffect(() => {
     if(contractWrite) {
       if(typeof write === 'function') {
+        console.log("here")
         write()
         const DialogBox = (
           <div className={migrate.dialogBox}>
