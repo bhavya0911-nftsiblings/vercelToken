@@ -23,6 +23,7 @@ import lar4 from '../images/lar4.png'
 import lar5 from '../images/lar5.png'
 import lar6 from '../images/lar6.png'
 import lar7 from '../images/lar7.png'
+import lar8 from '../images/lar8.png'
 import keys1 from '../images/keys1.png'
 import keys2 from '../images/keys2.png'
 
@@ -220,7 +221,8 @@ function CreateCollection({ children }) {
       lar4,
       lar5,
       lar6,
-      lar7
+      lar7,
+      lar8
     ]
 
     const keysURI = [
